@@ -18,7 +18,7 @@ skynet.start(function()
 	skynet.dispatch("lua", function(session, address, cmd, ...)
 		local f = command[cmd]
 		if f then
-			print(skynet.ret(skynet.pack(f(...))))
+			skynet.ret(skynet.pack(f(...)))
 		else
 			error(string.format("unknow cmd %s", cmd))
 		end
